@@ -1,0 +1,31 @@
+{
+  "applications": ["franquicia"],
+  "changelogDate": "20230220204449",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "sale",
+  "fields": [
+    {
+      "fieldName": "total",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Sale",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

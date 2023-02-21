@@ -1,0 +1,32 @@
+{
+  "applications": ["franquicia"],
+  "changelogDate": "20230220204649",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "shopping_cart",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ShoppingCart",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "menu",
+      "relationshipName": "menu",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

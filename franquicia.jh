@@ -1,0 +1,53 @@
+application {
+  config {
+    baseName franquicia,
+    applicationType monolith,
+    packageName ar.edu.um.franquicia,
+    buildTool maven,
+    devDatabaseType mariadb,
+    prodDatabaseType mariadb,
+    authenticationType jwt,
+    clientTheme spacelab,
+    languages [es,en],
+    nativeLanguage es,
+    enableSwaggerCodegen true
+  }
+  entities *
+}
+// Declaración de entidades
+entity Menu {
+  nombre String,
+  descripcion String,
+  precio Float,
+  urlImagen String,
+  activo Boolean,
+  creado String,
+  actualizado String
+}
+
+entity Sale {
+  total Double,
+  date LocalDate,
+}
+
+entity Details {
+  amount Integer,
+}
+
+entity ShoppingCart {
+  amount Integer,
+}
+
+
+// Definición de las relaciones entre los modelos
+relationship ManyToOne {
+  Details{menu} to Menu,
+  Details{sale} to Sale,
+  ShoppingCart{menu} to Menu,
+  ShoppingCart{client(login)} to User,
+  Sale{client(login)} to User
+}
+
+
+service * with serviceClass
+paginate * with pagination
